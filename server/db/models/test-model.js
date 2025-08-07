@@ -56,7 +56,6 @@ const TestSchema = new mongoose.Schema({
     },
     _subtests: [subtestSchema],
 }, {
-    timeseries: true,
     timestamps: true
 });
 

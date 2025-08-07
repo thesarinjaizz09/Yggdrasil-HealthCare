@@ -73,7 +73,6 @@ const PatientSchema = new mongoose.Schema({
     _isAllTestCompleted: { type: Boolean, default: false }
 }, {
     timestamps: true,
-    timeseries: true
 });
 
 module.exports = mongoose.model('Patients', PatientSchema);

@@ -1,7 +1,7 @@
 const employees = require("../db/models/employee-model")
 const encrypter = require("../utils/encryption/encrypter")
 
-const addEmployees = async ({ name, email, password, number }) => {
+const addEmployee = async ({ name, email, password, number }) => {
     try {
         const newEmployee = await employees.create({
             _name: name,
@@ -29,7 +29,7 @@ const addEmployees = async ({ name, email, password, number }) => {
     }
 }
 
-const getEmployees = async ({ id }) => {
+const getEmployee = async ({ id }) => {
     try {
         const employee = await employees.findById(id).select("-_password");
         if (!employee) {
@@ -50,7 +50,7 @@ const getEmployees = async ({ id }) => {
     }
 }
 
-const updateEmployees = async ({ id, employeeUpdates }) => {
+const updateEmployee = async ({ id, employeeUpdates }) => {
     try {
         await employees.findByIdAndUpdate(id, employeeUpdates)
         const updatedEmployee = await employees.findById(id)
@@ -73,7 +73,7 @@ const updateEmployees = async ({ id, employeeUpdates }) => {
     }
 }
 
-const deleteEmployees = async ({ id }) => {
+const deleteEmployee = async ({ id }) => {
     try {
         const deletedEmployee = await employees.findByIdAndDelete(id);
 
@@ -117,9 +117,9 @@ const fetchEmployees = async () => {
 }
 
 module.exports = {
-   addEmployees,
-   getEmployees,
-   updateEmployees,
+   addEmployee,
+   getEmployee,
+   updateEmployee,
    fetchEmployees,
-   deleteEmployees
+   deleteEmployee
 }

@@ -30,7 +30,6 @@ const AdminSchema = new mongoose.Schema({
     }
 }, {
     timestamps: true,
-    timeseries: true
 });
 
 module.exports = mongoose.model('Admins', AdminSchema);

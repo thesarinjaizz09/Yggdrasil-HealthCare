@@ -1,6 +1,6 @@
 const tests = require("../db/models/test-model")
 
-const addTests = async ({ name, code, description, category, price, units, normalRange, isSubtests, subtests }) => {
+const addTest = async ({ name, code, description, category, price, units, normalRange, isSubtests, subtests }) => {
     try {
         const newTest = await tests.create({
             _name: name,
@@ -32,7 +32,7 @@ const addTests = async ({ name, code, description, category, price, units, norma
     }
 }
 
-const getTests = async ({ id }) => {
+const getTest = async ({ id }) => {
     try {
         const test = await tests.findById(id);
         if (!test) {
@@ -53,7 +53,7 @@ const getTests = async ({ id }) => {
     }
 }
 
-const updateTests = async ({ id, testUpdates }) => {
+const updateTest = async ({ id, testUpdates }) => {
     try {
         await tests.findByIdAndUpdate(id, testUpdates)
         const updatedTest = await tests.findById(id)
@@ -76,7 +76,7 @@ const updateTests = async ({ id, testUpdates }) => {
     }
 }
 
-const deleteTests = async ({ id }) => {
+const deleteTest = async ({ id }) => {
     try {
         const deletedTest = await tests.findByIdAndDelete(id);
 
@@ -120,10 +120,10 @@ const fetchTests = async () => {
 }
 
 module.exports = {
-    addTests,
-    getTests,
+    addTest,
+    getTest,
     fetchTests,
-    updateTests,
-    deleteTests
+    updateTest,
+    deleteTest
 }
  

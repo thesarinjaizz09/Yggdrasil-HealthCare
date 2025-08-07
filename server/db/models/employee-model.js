@@ -1,9 +1,10 @@
 //Importing all the required packages
 
 const mongoose = require('mongoose'); // Importing mongoose for connecting to mongoDB
-import generate__url from '../../utils/connection-url-generator';
+const generateConnectionUrl = require("../../utils/connection-url-generator");
 
-const employeeAttendanceSchema = new mongooseSchema({
+
+const employeeAttendanceSchema = new mongoose.Schema({
     _date: {
         type: String,
         default: '01',
@@ -41,11 +42,10 @@ const employeeAttendanceSchema = new mongooseSchema({
     }
 }, {
     timestamps: true,
-    timeseries: true,
     _id: false
 });
 
-const EmployeeSchema = new mongooseSchema({
+const EmployeeSchema = new mongoose.Schema({
     _name: {
         type: String,
         required: true,
@@ -69,7 +69,7 @@ const EmployeeSchema = new mongooseSchema({
     },
     _employeeId: {
         type: String,
-        default: generate__url(6),
+        default: generateConnectionUrl(6),
         trim: true
     },
     _loginTime: {
@@ -101,7 +101,6 @@ const EmployeeSchema = new mongooseSchema({
     _employeeAttendance: [employeeAttendanceSchema]
 }, {
     timestamps: true,
-    timeseries: true
 });
 
 module.exports = mongoose.model('Employees', EmployeeSchema);
