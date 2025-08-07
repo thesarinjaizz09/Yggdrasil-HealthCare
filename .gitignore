@@ -40,9 +40,9 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-utils/encryption/
-utils/decryption/
-utils/keys/
+server/utils/encryption/
+server/utils/decryption/
+server/utils/keys/
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
