@@ -15,12 +15,13 @@
 
 ## 🚀 Features
 
-- 🧑‍⚕️ Patient Registration & Tracking
-- 🩻 Diagnostic Lab Integration
-- 📁 Electronic Health Records (EHR)
-- 🤖 AI Diagnostics & Predictive Insights (Python)
-- 🗂️ Admin Dashboard with Real-Time Analytics
 - 🏥 Multi-Institution Support
+- 💻 Diagnostic Lab Integration
+- 🤖 Employees Management Systems
+- 📁 Electronic Health Records (EHR)
+- 🧑‍⚕️ Patient Registration & Tracking
+- 🗂️ Admin Dashboard with Real-Time Analytics
+- 🤖 AI Diagnostics & Predictive Insights (Python)
 
 ---
 
@@ -45,16 +46,35 @@ git clone https://github.com/thesarinjaizz09/Yggdrasil-HealthCare.git
 cd Yggdrasil-HealthCare
 
 # Install backend dependencies
-cd backend
+cd server
 npm install
 
 # Install frontend dependencies
-cd ../frontend
+cd ../client
 npm install
 
-# Run backend and frontend in separate terminals
-npm run server  # Backend
+# RUNNING THE APPLICATION INDIVIDUALLY
+
+# Run backend in development mode
+cd server
+npm run dev  # Backend 
+# Run backend in production mode
+cd server
+npm run start   # Run the application
+# Run frontend in development mode
+cd ../client
 npm run dev     # Frontend
+# Run frontend in production mode
+cd client
+npm run build   # Build the application
+npm run start   # Run the application
+
+# RUNNING THE APPLICATION COCURRENTLY
+
+cd Yggdrasil-HealthCare
+npm run start    # This will start both the client and server in development mode in a single terminal
+
+
 ```
 
 ---

@@ -1,0 +1,20 @@
+{
+  "name": "yggdrasil-healthcare",
+  "version": "1.0.0",
+  "description": "Yggdrasil-Healthcare is an AI-powered healthcare management system built with the MERN stack and Python for AI modules. It serves hospitals, diagnostic labs, and clinics with features like smart patient management, EHR, diagnostics, real-time analytics, secure access, and scalable operations.",
+  "scripts": {
+    "server": "cd server && npm run dev",
+    "client": "cd ../client && npm run dev",
+    "start": "concurrently -n SERVER,CLIENT -c blue,green \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesarinjaizz09/Yggdrasil-HealthCare.git"
+  },
+  "author": "Sarin Jaiswal",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/thesarinjaizz09/Yggdrasil-HealthCare/issues"
+  },
+  "homepage": "https://github.com/thesarinjaizz09/Yggdrasil-HealthCare#readme"
+}
