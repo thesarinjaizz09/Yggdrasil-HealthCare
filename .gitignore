@@ -42,6 +42,7 @@ node_modules/
 jspm_packages/
 utils/encryption/
 utils/decryption/
+utils/keys/
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
